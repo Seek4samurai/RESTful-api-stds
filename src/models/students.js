@@ -4,12 +4,12 @@ const validator = require("validator");
 const studentSchema = new mongoose.Schema({
   name: {
     type: String,
-    // required: true,
+    required: true,
     minlength: 3
   },
   email: {
     type: String,
-    // required: true,
+    required: true,
     unique: [true, "Already Exists"],
     validate(value) {
       if (!validator.isEmail(value)) {
@@ -20,12 +20,12 @@ const studentSchema = new mongoose.Schema({
   phone: {
     type: Number,
     minlength: 10,
-    // required: true,
+    required: true,
     unique: true
   },
   address: {
     type: String,
-    // required: true
+    required: true
   }
 });
 
